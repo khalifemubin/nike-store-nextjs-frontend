@@ -99,7 +99,7 @@ export async function getStaticPaths() {
     //generate paths of all the categories
     const categories = await fetchDataFromApi("/api/categories?populate=*");
     //return object for each item
-    const paths = categories.data.map((c) => ({
+    const paths = categories?.data?.map((c) => ({
         params: {
             slug: c.attributes.slug
         }
